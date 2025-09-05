@@ -31,7 +31,7 @@
     .nav-links a:hover { color: #667eea; }
 
     /* Hero */
-    .hero {
+/*     .hero {
       height: 100vh; display: flex; align-items: center; justify-content: center;
       text-align: center; color: white;
     }
@@ -42,7 +42,38 @@
       border: 2px solid white; text-decoration: none; color: white;
       transition: all 0.3s ease;
     }
-    .cta-button:hover { background: white; color: #667eea; }
+    .cta-button:hover { background: white; color: #667eea; } */
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    
+      /* Background image */
+      background-image: url('nighttime-windsurf.jpg'); /* path relative to CSS file */
+      background-size: cover;       /* ensures the image covers the full hero area */
+      background-position: center;  /* centers the image */
+      background-repeat: no-repeat; /* prevents tiling */
+      /* Optional: dark overlay for text readability */
+      position: relative;
+    }
+    
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* semi-transparent overlay */
+      z-index: 0;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1; /* ensures text is above overlay */
+    }
 
     /* Sections */
     .section { padding: 80px 0; background: white; }
@@ -121,7 +152,7 @@
   <section class="hero">
     <div class="hero-content">
       <h1>Hello, I'm Jakub Slon-Jones</h1>
-      <p>Senior Site Reliability Engineer</p>
+      <p>Senior DevOps Engineer</p>
       <a href="#about" class="cta-button">Learn More About Me</a>
     </div>
   </section>
@@ -137,6 +168,8 @@
         <div class="about-text">
           <h3>Passionate DevOps & SRE Professional</h3>
           <p>Experienced DevOps and SRE engineer specialising in Kubernetes, AWS, and Azure. I thrive on solving complex problems, streamlining deployments, and collaborating with teams to build reliable, automated, and maintainable systems while continuously exploring emerging technologies.</p>
+          <p>In my spare time I either run or surf, walk my two dogs Bella and Maja or tinker on my track built Clio 182.</p>
+          <p>Recently I have been working on my K8s HomeLab with a goal of getting better understanding of Service Mesh and improving on my ArgoCD knowledge.</p>
         </div>
       </div>
     </div>
