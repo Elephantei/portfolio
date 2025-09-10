@@ -76,6 +76,9 @@
       position: relative;
       z-index: 1; /* ensures text is above overlay */
     }
+    
+    .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
+    .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
 
     /* Sections */
     .section { padding: 80px 0; background: white; }
@@ -99,6 +102,7 @@
     }
     .about-text { font-size: 1.1rem; line-height: 1.8; }
     .about-text h3 { color: #667eea; margin-bottom: 1rem; font-size: 1.5rem; }
+    .about-text p { margin-bottom: 1.5rem; }
 
     /* Resume */
     .resume-entry {
@@ -109,6 +113,7 @@
     .resume-entry:hover { border-left-color: #764ba2; transform: translateY(-5px); }
     .resume-entry h3 { color: #667eea; margin-bottom: 0.5rem; }
     .resume-entry h4 { font-size: 1rem; color: #555; margin-bottom: 1rem; font-weight: normal; }
+    .resume-entry p { margin-bottom: 1rem; }
     .resume-entry ul { margin-left: 1.5rem; margin-bottom: 1rem; }
     .resume-entry li { margin-bottom: 0.5rem; }
     .tech-stack { font-style: italic; color: #444; font-size: 0.95rem; }
@@ -126,7 +131,21 @@
     .download-button::before { content: '📄 '; margin-right: 8px; }
 
     /* Footer */
-    .footer { background: #333; color: white; text-align: center; padding: 2rem 0; }
+    .footer { 
+      background: #333; color: white; text-align: center; padding: 3rem 0; 
+    }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+    .linkedin-badge {
+      margin: 1rem 0;
+    }
+    .footer p {
+      margin: 1rem 0;
+    }
 
     /* Mobile */
     @media (max-width: 768px) {
@@ -186,7 +205,7 @@
       <h3>Senior Site Reliability Engineer — RTGS Global</h3>
       <h4>London (Remote) | Nov 2024 – Present</h4>
       <p>I am part of the platform engineering team modernising a high-availability financial services platform, embedding DevOps and SRE practices to improve reliability, speed, and compliance in a regulated environment. Refactored critical Azure microservices into serverless patterns, cutting operational overhead and enabling elastic scaling during peak settlement hours.</p>
-      <p>Built reusable Terraform modules to provision compliant, highly available environments, accelerating environment creation from days to hours. </p>
+      <p>Built reusable Terraform modules to provision compliant, highly available environments, accelerating environment creation from days to hours.
       <p>Designed and implemented CI/CD pipelines in Azure DevOps with integrated security scanning and monitoring hooks, reducing release failures and increasing deployment confidence.</p>
       <p>Introduced OpenTelemetry-based observability integrated with Azure Monitor, shortening mean time to recovery and improving visibility across distributed services.</p>
       <p class="tech-stack">Tech stack: Azure (Container Apps, Functions, AKS), Terraform, Azure DevOps, OpenTelemetry</p>
@@ -195,33 +214,30 @@
     <div class="resume-entry">
       <h3>Senior DevOps Engineer — X-Lab Systems</h3>
       <h4>Leeds (Remote) | Aug 2023 – Nov 2024</h4>
-      <p>Worked on modernising and optimising cloud infrastructure supporting critical healthcare systems on Azure. </p>
-      <p>Created reusable Terraform modules to standardise AKS clusters, networking, and security components across environments.</p>
+      <p>Worked on modernising and optimising cloud infrastructure supporting critical healthcare systems on Azure. Created reusable Terraform modules to standardise AKS clusters, networking, and security components across environments.</p>
       <p>Delivered gated CI/CD pipelines in Azure DevOps and GitLab CI, improving deployment confidence and reducing failed releases.</p>
       <p>Achieved a 30% (~£130k annually) reduction in Azure spend through governance tooling, workload right-sizing, and proactive monitoring. Introduced Prometheus and Grafana for observability, supporting on-call operations to ensure system reliability.</p>
-      <br>
       <p class="tech-stack">Tech stack: Azure (AKS), Terraform, Azure DevOps, GitLab CI, Prometheus, Grafana</p>
     </div>
 
     <div class="resume-entry">
       <h3>DevOps Consultant — Amido (Ensono Digital)</h3>
       <h4>London (Remote) | Jan 2023 – Aug 2023</h4>
-      <p>Consulted across enterprise AWS and Azure projects for highly regulated clients, helping teams modernise cloud infrastructure while maintaining compliance and reliability at scale.</p>
-      <p>Delivered Terraform-based automation pipelines, ensuring repeatable and auditable infrastructure deployments.</p>
-      <p>Developed reusable Helm charts to streamline Kubernetes application rollouts and standardise practices across teams. Orchestrated EKS and AKS clusters to improve uptime, resilience, and operational efficiency. </p>
-      <p>Produced technical documentation and conducted peer reviews to drive consistent engineering standards.</p>
-      <br>
+      <p>Consulted across enterprise AWS and Azure projects for highly regulated clients, helping teams modernise cloud infrastructure while maintaining compliance and reliability at scale. Delivered Terraform-based automation pipelines, ensuring repeatable and auditable infrastructure deployments.</p>
+      <p>Developed reusable Helm charts to streamline Kubernetes application rollouts and standardise practices across teams. Orchestrated EKS and AKS clusters to improve uptime, resilience, and operational efficiency. Produced technical documentation and conducted peer reviews to drive consistent engineering standards.</p>
       <p class="tech-stack">Tech stack: AWS, Azure, Kubernetes (EKS/AKS), Terraform, Helm</p>
     </div>
 
     <div class="resume-entry">
       <h3>Senior DevOps Engineer — BVNK</h3>
       <h4>London (Remote) | Aug 2022 – Jan 2023</h4>
-      <p>Part of the engineering team scaling infrastructure for high-throughput crypto services, focusing on resilience, cost efficiency, and developer support. </p>
-      <p>Managed and scaled EKS clusters and Helm deployments for production workloads.</p>
-      <p>Tuned autoscaling policies and performance metrics, reducing infrastructure costs while improving resilience under heavy load. </p>
-      <p>Introduced Grafana dashboards and on-call processes to enhance incident response. Partnered with developers to resolve performance bottlenecks in production, improving user experience during high-traffic events.</p>
-      <br>
+      <p>Part of the engineering team scaling infrastructure for high-throughput crypto services, focusing on resilience, cost efficiency, and developer support.</p>
+      <ul>
+        <li>Managed and scaled EKS clusters and Helm deployments for production workloads</li>
+        <li>Tuned autoscaling policies and performance metrics, reducing infrastructure costs while improving resilience under heavy load</li>
+        <li>Introduced Grafana dashboards and on-call processes to enhance incident response</li>
+        <li>Partnered with developers to resolve performance bottlenecks in production, improving user experience during high-traffic events</li>
+      </ul>
       <p class="tech-stack">Tech stack: AWS (EKS), Kubernetes, Helm, Grafana</p>
     </div>
 
@@ -260,18 +276,22 @@
     </div>
   </section>
 
-  <!-- LinkedIn Badge Script -->
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
-</body>
-</html>
-
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; 2025 Jakub Slon-Jones. All rights reserved.</p>
+        <p>&copy; 2024 Jakub Slon-Jones. All rights reserved.</p>
+        <div class="linkedin-badge">
+          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="jakubslon" data-version="v1">
+            <a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/jakubslon?trk=profile-badge">Jakub S.</a>
+          </div>
+        </div>
         <p>Connect with me on LinkedIn to see more of my professional journey.</p>
       </div>
     </div>
   </footer>
 
+  <!-- LinkedIn Badge Script -->
+  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
+</body>
+</html>
