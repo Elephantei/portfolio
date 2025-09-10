@@ -121,9 +121,11 @@
         <li><a href="#about">About</a></li>
         <li><a href="#resume">Resume</a></li>
       </ul>
-      <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark</button>
+      <!-- Theme toggle button -->
+      <button id="theme-toggle" class="theme-toggle">🌙 Dark</button>
     </div>
   </header>
+  
 
   <!-- Hero -->
   <section class="hero">
@@ -264,16 +266,16 @@
         </div>
       </div>
     </footer>
-    <script>
-      function toggleTheme() {
-        document.body.classList.toggle('dark-theme');
-        const button = document.querySelector('.theme-toggle');
-        if (document.body.classList.contains('dark-theme')) {
-          button.textContent = '☀️ Light';
-        } else {
-          button.textContent = '🌙 Dark';
-        }
-      }
-    </script>
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')) {
+      toggleBtn.textContent = '☀️ Light';
+    } else {
+      toggleBtn.textContent = '🌙 Dark';
+    }
+  });
+</script>
   </body>
   </html>
