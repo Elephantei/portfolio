@@ -30,14 +30,6 @@
     .nav-links a { text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s ease; }
     .nav-links a:hover { color: #667eea; }
 
-    /* Hero */
-/*     .hero {
-      height: 100vh; display: flex; align-items: center; justify-content: center;
-      text-align: center; color: white;
-    }
-    .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; }
-    .hero-content p { font-size: 1.2rem; margin-bottom: 2rem; }
-*/
     .cta-button {
       display: inline-block; padding: 12px 30px; border-radius: 50px;
       border: 2px solid white; text-decoration: none; color: white;
@@ -196,74 +188,86 @@
     </div>
   </section>
 
-<!-- Resume -->
-<section id="resume" class="section">
-  <div class="container">
-    <h2 class="section-title">Experience</h2>
+  <!-- Resume -->
+  <section id="resume" class="section">
+    <div class="container">
+      <h2 class="section-title">Experience</h2>
 
-    <div class="resume-entry">
-      <h3>Senior Site Reliability Engineer — RTGS Global</h3>
-      <h4>London (Remote) | Nov 2024 – Present</h4>
-      <p>I am part of the platform engineering team modernising a high-availability financial services platform, embedding DevOps and SRE practices to improve reliability, speed, and compliance in a regulated environment. Refactored critical Azure microservices into serverless patterns, cutting operational overhead and enabling elastic scaling during peak settlement hours.</p>
-      <p>Built reusable Terraform modules to provision compliant, highly available environments, accelerating environment creation from days to hours.
-      <p>Designed and implemented CI/CD pipelines in Azure DevOps with integrated security scanning and monitoring hooks, reducing release failures and increasing deployment confidence.</p>
-      <p>Introduced OpenTelemetry-based observability integrated with Azure Monitor, shortening mean time to recovery and improving visibility across distributed services.</p>
-      <p class="tech-stack">Tech stack: Azure (Container Apps, Functions, AKS), Terraform, Azure DevOps, OpenTelemetry</p>
+      <div class="resume-entry">
+        <h3>Senior Site Reliability Engineer — RTGS Global</h3>
+        <h4>London (Remote) | Nov 2024 – Present</h4>
+        <p>I am part of the platform engineering team modernising a high-availability financial services platform, embedding DevOps and SRE practices to improve reliability, speed, and compliance in a regulated environment.</p>
+        <ul>
+          <li>Refactored critical Azure microservices into serverless patterns, cutting operational overhead and enabling elastic scaling during peak settlement hours</li>
+          <li>Built reusable Terraform modules to provision compliant, highly available environments, accelerating environment creation from days to hours</li>
+          <li>Designed and implemented CI/CD pipelines in Azure DevOps with integrated security scanning and monitoring hooks, reducing release failures and increasing deployment confidence</li>
+          <li>Introduced OpenTelemetry-based observability integrated with Azure Monitor, shortening mean time to recovery and improving visibility across distributed services</li>
+        </ul>
+        <p class="tech-stack">Tech stack: Azure (Container Apps, Functions, AKS), Terraform, Azure DevOps, OpenTelemetry</p>
+      </div>
+
+      <div class="resume-entry">
+        <h3>Senior DevOps Engineer — X-Lab Systems</h3>
+        <h4>Leeds (Remote) | Aug 2023 – Nov 2024</h4>
+        <p>Worked on modernising and optimising cloud infrastructure supporting critical healthcare systems on Azure.</p>
+        <ul>
+          <li>Created reusable Terraform modules to standardise AKS clusters, networking, and security components across environments</li>
+          <li>Delivered gated CI/CD pipelines in Azure DevOps and GitLab CI, improving deployment confidence and reducing failed releases</li>
+          <li>Achieved a 30% (~£130k annually) reduction in Azure spend through governance tooling, workload right-sizing, and proactive monitoring</li>
+          <li>Introduced Prometheus and Grafana for observability, supporting on-call operations to ensure system reliability</li>
+        </ul>
+        <p class="tech-stack">Tech stack: Azure (AKS), Terraform, Azure DevOps, GitLab CI, Prometheus, Grafana</p>
+      </div>
+
+      <div class="resume-entry">
+        <h3>DevOps Consultant — Amido (Ensono Digital)</h3>
+        <h4>London (Remote) | Jan 2023 – Aug 2023</h4>
+        <p>Consulted across enterprise AWS and Azure projects for highly regulated clients, helping teams modernise cloud infrastructure while maintaining compliance and reliability at scale.</p>
+        <ul>
+          <li>Delivered Terraform-based automation pipelines, ensuring repeatable and auditable infrastructure deployments</li>
+          <li>Developed reusable Helm charts to streamline Kubernetes application rollouts and standardise practices across teams</li>
+          <li>Orchestrated EKS and AKS clusters to improve uptime, resilience, and operational efficiency</li>
+          <li>Produced technical documentation and conducted peer reviews to drive consistent engineering standards</li>
+        </ul>
+        <p class="tech-stack">Tech stack: AWS, Azure, Kubernetes (EKS/AKS), Terraform, Helm</p>
+      </div>
+
+      <div class="resume-entry">
+        <h3>Senior DevOps Engineer — BVNK</h3>
+        <h4>London (Remote) | Aug 2022 – Jan 2023</h4>
+        <p>Part of the engineering team scaling infrastructure for high-throughput crypto services, focusing on resilience, cost efficiency, and developer support.</p>
+        <ul>
+          <li>Managed and scaled EKS clusters and Helm deployments for production workloads</li>
+          <li>Tuned autoscaling policies and performance metrics, reducing infrastructure costs while improving resilience under heavy load</li>
+          <li>Introduced Grafana dashboards and on-call processes to enhance incident response</li>
+          <li>Partnered with developers to resolve performance bottlenecks in production, improving user experience during high-traffic events</li>
+        </ul>
+        <p class="tech-stack">Tech stack: AWS (EKS), Kubernetes, Helm, Grafana</p>
+      </div>
+
+      <div class="resume-entry">
+        <h3>SRE & DevOps Consultant — Amido (Ensono Digital)</h3>
+        <h4>London (Remote) | 2021 – 2022</h4>
+        <p>Delivered SRE initiatives and DevOps enablement across AWS, Azure, and GCP. Defined SLIs/SLOs, implemented dashboards and automated alerts, deployed multi-cloud infrastructure with Terraform, and improved on-call response efficiency.</p>
+        <p class="tech-stack">Tech stack: AWS, Azure, GCP, Terraform, Monitoring/Alerting</p>
+      </div>
+
+      <div class="resume-entry">
+        <h3>DevOps Engineer — ForgeRock</h3>
+        <h4>Bristol (Remote) | 2019 – 2021</h4>
+        <p>Enabled CI/CD and cloud infrastructure automation for secure identity platforms. Built and maintained Terraform modules for cloud-native deployments, supported CI/CD pipelines and release automation, and contributed to platform monitoring and incident resolution.</p>
+        <p class="tech-stack">Tech stack: AWS, Terraform, CI/CD tools, Monitoring</p>
+      </div>
+
+      <div class="resume-entry">
+        <h3>Network Virtualisation Engineer — Nokia</h3>
+        <h4>Bristol | 2018 – 2019</h4>
+        <p>Worked on network virtualisation projects, supporting infrastructure deployment, configuration, and optimisation for telecom systems.</p>
+        <p class="tech-stack">Tech stack: Networking, Virtualisation</p>
+      </div>
+
     </div>
-
-    <div class="resume-entry">
-      <h3>Senior DevOps Engineer — X-Lab Systems</h3>
-      <h4>Leeds (Remote) | Aug 2023 – Nov 2024</h4>
-      <p>Worked on modernising and optimising cloud infrastructure supporting critical healthcare systems on Azure. Created reusable Terraform modules to standardise AKS clusters, networking, and security components across environments.</p>
-      <p>Delivered gated CI/CD pipelines in Azure DevOps and GitLab CI, improving deployment confidence and reducing failed releases.</p>
-      <p>Achieved a 30% (~£130k annually) reduction in Azure spend through governance tooling, workload right-sizing, and proactive monitoring. Introduced Prometheus and Grafana for observability, supporting on-call operations to ensure system reliability.</p>
-      <p class="tech-stack">Tech stack: Azure (AKS), Terraform, Azure DevOps, GitLab CI, Prometheus, Grafana</p>
-    </div>
-
-    <div class="resume-entry">
-      <h3>DevOps Consultant — Amido (Ensono Digital)</h3>
-      <h4>London (Remote) | Jan 2023 – Aug 2023</h4>
-      <p>Consulted across enterprise AWS and Azure projects for highly regulated clients, helping teams modernise cloud infrastructure while maintaining compliance and reliability at scale. Delivered Terraform-based automation pipelines, ensuring repeatable and auditable infrastructure deployments.</p>
-      <p>Developed reusable Helm charts to streamline Kubernetes application rollouts and standardise practices across teams. Orchestrated EKS and AKS clusters to improve uptime, resilience, and operational efficiency. Produced technical documentation and conducted peer reviews to drive consistent engineering standards.</p>
-      <p class="tech-stack">Tech stack: AWS, Azure, Kubernetes (EKS/AKS), Terraform, Helm</p>
-    </div>
-
-    <div class="resume-entry">
-      <h3>Senior DevOps Engineer — BVNK</h3>
-      <h4>London (Remote) | Aug 2022 – Jan 2023</h4>
-      <p>Part of the engineering team scaling infrastructure for high-throughput crypto services, focusing on resilience, cost efficiency, and developer support.</p>
-      <ul>
-        <li>Managed and scaled EKS clusters and Helm deployments for production workloads</li>
-        <li>Tuned autoscaling policies and performance metrics, reducing infrastructure costs while improving resilience under heavy load</li>
-        <li>Introduced Grafana dashboards and on-call processes to enhance incident response</li>
-        <li>Partnered with developers to resolve performance bottlenecks in production, improving user experience during high-traffic events</li>
-      </ul>
-      <p class="tech-stack">Tech stack: AWS (EKS), Kubernetes, Helm, Grafana</p>
-    </div>
-
-    <div class="resume-entry">
-      <h3>SRE & DevOps Consultant — Amido (Ensono Digital)</h3>
-      <h4>London (Remote) | 2021 – 2022</h4>
-      <p>Delivered SRE initiatives and DevOps enablement across AWS, Azure, and GCP. Defined SLIs/SLOs, implemented dashboards and automated alerts, deployed multi-cloud infrastructure with Terraform, and improved on-call response efficiency.</p>
-      <p class="tech-stack">Tech stack: AWS, Azure, GCP, Terraform, Monitoring/Alerting</p>
-    </div>
-
-    <div class="resume-entry">
-      <h3>DevOps Engineer — ForgeRock</h3>
-      <h4>Bristol (Remote) | 2019 – 2021</h4>
-      <p>Enabled CI/CD and cloud infrastructure automation for secure identity platforms. Built and maintained Terraform modules for cloud-native deployments, supported CI/CD pipelines and release automation, and contributed to platform monitoring and incident resolution.</p>
-      <p class="tech-stack">Tech stack: AWS, Terraform, CI/CD tools, Monitoring</p>
-    </div>
-
-    <div class="resume-entry">
-      <h3>Network Virtualisation Engineer — Nokia</h3>
-      <h4>Bristol | 2018 – 2019</h4>
-      <p>Worked on network virtualisation projects, supporting infrastructure deployment, configuration, and optimisation for telecom systems.</p>
-      <p class="tech-stack">Tech stack: Networking, Virtualisation</p>
-    </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- Download -->
   <section class="section download-section">
@@ -282,16 +286,16 @@
       <div class="footer-content">
         <p>&copy; 2024 Jakub Slon-Jones. All rights reserved.</p>
         <div class="linkedin-badge">
-          <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="dark" data-type="HORIZONTAL" data-vanity="jakubslon" data-version="v1">
-            <a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/jakubslon?trk=profile-badge">Jakub S.</a>
-          </div>
+          <a href="https://uk.linkedin.com/in/jakubslon" target="_blank" style="display: inline-block; padding: 12px 24px; background: #0077B5; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s ease;">
+            <svg width="20" height="20" style="vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
         </div>
         <p>Connect with me on LinkedIn to see more of my professional journey.</p>
       </div>
     </div>
   </footer>
-
-  <!-- LinkedIn Badge Script -->
-  <script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 </body>
 </html>
