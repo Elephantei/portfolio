@@ -58,6 +58,7 @@
       border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;
     }
     .theme-toggle:hover { background: #764ba2; }
+
     .about-content {
       display: grid;
       grid-template-columns: 1fr 2fr;
@@ -73,6 +74,8 @@
       object-fit: cover;
       border: 5px solid #667eea;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      margin: 0 auto;
+      display: block;
     }
 
     .about-text {
@@ -148,6 +151,7 @@
     }
     .resume-entry h3 { color: #667eea; margin-bottom: 0.5rem; }
     .resume-entry h4 { font-size: 1rem; color: #555; margin-bottom: 1rem; font-weight: normal; }
+
     /* Download */
     .download-button {
       display: inline-block;
@@ -169,16 +173,153 @@
       align-items: center;
     }
 
+    /* GitHub Section */
+    .github-section {
+      background: var(--section-bg);
+      padding: 80px 0;
+    }
+
+    .github-banner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #24292e, #586069);
+      color: white;
+      padding: 2rem;
+      border-radius: 15px;
+      margin-bottom: 3rem;
+      text-decoration: none;
+      transition: all 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .github-banner:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      color: white;
+      text-decoration: none;
+    }
+
+    .github-banner svg {
+      width: 48px;
+      height: 48px;
+      margin-right: 1rem;
+      fill: currentColor;
+    }
+
+    .github-banner-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .github-banner-content p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      color: white;
+    }
+
+    .github-activity {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .github-explanation {
+      background: var(--resume-bg);
+      padding: 1.5rem 2rem;
+      border-radius: 10px;
+      border-left: 4px solid #24292e;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      font-style: italic;
+      color: var(--text-color);
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .github-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    .github-card {
+      background: var(--resume-bg);
+      border-radius: 15px;
+      padding: 1.5rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      overflow: hidden;
+    }
+
+    .github-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+
+    .github-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
 
     /* Footer */
     .footer { 
       background: var(--footer-bg); color: var(--footer-text); text-align: center; padding: 3rem 0; transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* Mobile */
+    /* Mobile Responsiveness */
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hero-content h1 { font-size: 2.5rem; }
+      
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+      }
+      
+      .profile-photo {
+        max-width: 250px;
+        height: 250px;
+      }
+      
+      .github-banner {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .github-banner svg {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+      
+      .github-stats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .profile-photo {
+        max-width: 200px;
+        height: 200px;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .github-banner-content h3 {
+        font-size: 1.5rem;
+      }
+      
+      .github-banner-content p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
@@ -190,6 +331,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#resume">Resume</a></li>
+        <li><a href="#github">GitHub</a></li>
       </ul>
       <!-- Theme toggle button -->
       <button id="theme-toggle" class="theme-toggle">🌙 Dark</button>
@@ -303,6 +445,41 @@
         <p class="tech-stack">Tech stack: Networking, Virtualisation</p>
       </div>
 
+    </div>
+  </section>
+
+  <!-- GitHub Section -->
+  <section id="github" class="section github-section">
+    <div class="container">
+      <h2 class="section-title">GitHub Projects</h2>
+      
+      <a href="https://github.com/Elephantei" target="_blank" class="github-banner">
+        <svg viewBox="0 0 24 24">
+          <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        <div class="github-banner-content">
+          <h3>Visit My GitHub Profile</h3>
+          <p>Explore my repositories and contributions</p>
+        </div>
+      </a>
+
+      <div class="github-explanation">
+        <p>Some of my projects were built for internal company accounts and are not under my personal GitHub. The repositories shown here represent a selection of my public work.</p>
+      </div>
+
+      <div class="github-activity">
+        <div class="github-stats">
+          <div class="github-card">
+            <img src="https://github-readme-stats.vercel.app/api?username=Elephantei&show_icons=true&theme=default&hide_border=true" alt="GitHub Stats" />
+          </div>
+          <div class="github-card">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Elephantei&layout=compact&theme=default&hide_border=true" alt="Top Languages" />
+          </div>
+        </div>
+        <div class="github-card" style="max-width: 800px; width: 100%;">
+          <img src="https://github-readme-activity-graph.vercel.app/graph?username=Elephantei&theme=github-compact&hide_border=true" alt="GitHub Activity Graph" />
+        </div>
+      </div>
     </div>
   </section>
 
