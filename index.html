@@ -261,6 +261,86 @@
       box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     }
 
+    /* Technical Work Section */
+    .case-study {
+      background: var(--resume-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-left: 4px solid #667eea;
+    }
+
+    .case-study-title {
+      color: #667eea;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 0.5rem;
+    }
+
+    .case-study-content {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .case-study-section {
+      background: var(--section-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .case-study-subtitle {
+      color: #667eea;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .case-study-section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .case-study-placeholder {
+      background: var(--section-alt-bg);
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin-top: 2rem;
+    }
+
+    .case-study-placeholder h3 {
+      color: #667eea;
+      margin-bottom: 1rem;
+      font-style: normal;
+    }
+
     .github-card img {
       width: 100%;
       height: auto;
@@ -301,6 +381,18 @@
       .github-stats {
         grid-template-columns: 1fr;
       }
+      
+      .case-study-content {
+        gap: 1.5rem;
+      }
+      
+      .case-study {
+        padding: 1.5rem;
+      }
+      
+      .tech-tags {
+        justify-content: center;
+      }
     }
 
     @media (max-width: 480px) {
@@ -331,6 +423,7 @@
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#resume">Resume</a></li>
+        <li><a href="#technical-work">Technical Work</a></li>
         <li><a href="#github">GitHub</a></li>
       </ul>
       <!-- Theme toggle button -->
@@ -361,8 +454,131 @@
           <h3>Passionate DevOps & SRE Professional</h3>
           <p>Experienced DevOps and SRE engineer specialising in Kubernetes, AWS, and Azure. I thrive on solving complex problems, streamlining deployments, and collaborating with teams to build reliable, automated, and maintainable systems while continuously exploring emerging technologies.</p>
           <p>In my spare time I either run or surf, walk my two dogs Bella and Maja or tinker on my track built Clio 182.</p>
-          <p>Recently I have been working on my K8s HomeLab with a goal of getting better understanding of Service Mesh and improving on my ArgoCD knowledge.</p>
+          <p>Recently I have been working on my K8s HomeLab (K3s & Rancher & Traefik) with a goal of getting better understanding of Service Mesh and improving on my ArgoCD knowledge.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Work Section -->
+  <section id="technical-work" class="section">
+    <div class="container">
+      <h2 class="section-title">Technical Work</h2>
+      
+      <!-- Case Study 1: EKS Scaling -->
+      <div class="case-study">
+        <h3 class="case-study-title">Scaling High-Throughput Workloads on EKS</h3>
+        
+        <div class="case-study-content">
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Problem</h4>
+            <p>A high-frequency trading platform was experiencing unpredictable traffic spikes during market volatility, leading to:</p>
+            <ul>
+              <li>Service degradation during peak trading hours</li>
+              <li>Inconsistent response times affecting trade execution</li>
+              <li>Manual scaling interventions causing operational overhead</li>
+              <li>Resource contention between different workload types</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Approach</h4>
+            <ul>
+              <li><strong>EKS Cluster Management:</strong> Implemented multi-AZ cluster architecture with node groups optimized for different workload types</li>
+              <li><strong>Autoscaling Policies:</strong> Configured HPA and VPA with custom metrics, fine-tuned scaling policies for rapid response to traffic spikes</li>
+              <li><strong>Namespace Isolation:</strong> Split workloads across dedicated namespaces to prevent resource contention and enable independent scaling</li>
+              <li><strong>Istio Service Mesh:</strong> Implemented traffic management, security policies, and observability across microservices</li>
+              <li><strong>GitLab CI/CD:</strong> Built fully automated pipelines with integrated testing, security scanning, and deployment automation</li>
+              <li><strong>Pod Disruption Budgets:</strong> Enhanced PDBs to ensure zero-downtime deployments during rolling updates</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Tools Used</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag">EKS</span>
+              <span class="tech-tag">Helm</span>
+              <span class="tech-tag">Istio</span>
+              <span class="tech-tag">GitLab CI/CD</span>
+              <span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">Grafana</span>
+              <span class="tech-tag">Terraform</span>
+            </div>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Outcome</h4>
+            <ul>
+              <li><strong>99.9% uptime</strong> during high-traffic periods (previously 95.2%)</li>
+              <li><strong>30% improvement</strong> in p95 latency during peak loads</li>
+              <li><strong>Zero manual interventions</strong> required for scaling events</li>
+              <li><strong>40% reduction</strong> in infrastructure costs through optimized resource allocation</li>
+              <li>Successfully handled <strong>10x traffic spikes</strong> without service degradation</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      
+      <!-- Case Study 2: Terraform Modules -->
+      <div class="case-study">
+        <h3 class="case-study-title">Terraform Modules for Multi-Squad Adoption</h3>
+        
+        <div class="case-study-content">
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Problem</h4>
+            <p>Four development teams were creating inconsistent Azure infrastructure across environments, leading to:</p>
+            <ul>
+              <li>Duplicated Terraform code and configuration drift between teams</li>
+              <li>Security vulnerabilities from inconsistent NSG configurations and Docker CVEs</li>
+              <li>Deployment failures due to environment-specific hardcoded values</li>
+              <li>Increased maintenance overhead and knowledge silos</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Approach</h4>
+            <ul>
+              <li><strong>Module Architecture:</strong> Designed reusable Terraform modules with clear interfaces and versioning strategy</li>
+              <li><strong>Standardisation:</strong> Created modules for common Azure patterns (VNet, AKS, SQL Database, Application Gateway) with built-in security best practices</li>
+              <li><strong>Documentation:</strong> Built comprehensive module documentation with examples and usage patterns</li>
+              <li><strong>CI/CD Integration:</strong> Implemented automated testing and validation pipelines for module changes</li>
+              <li><strong>Governance:</strong> Established module registry and approval process for production deployments</li>
+              <li><strong>Embedded Onboarding:</strong> Created self-service onboarding process where users add themselves to Azure groups directly from the repository</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Tools Used</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Azure DevOps</span>
+              <span class="tech-tag">Checkov</span>
+              <span class="tech-tag">Terraform Cloud</span>
+              <span class="tech-tag">Git</span>
+            </div>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Outcome</h4>
+            <ul>
+              <li><strong>80% reduction</strong> in infrastructure provisioning time across teams</li>
+              <li><strong>Significant reduction</strong> in security vulnerabilities through standardized NSG configurations</li>
+              <li><strong>95% code reuse</strong> across different environments and teams</li>
+              <li><strong>Self-service onboarding</strong> reduced manual setup time from days to minutes</li>
+              <li>Successfully migrated <strong>4 development teams</strong> to standardized module approach</li>
+            </ul>
+          </div>
+ 
+        </div>
+      </div>
+      
+      <!-- Placeholder for future case studies -->
+      <div class="case-study-placeholder">
+        <h3>More Technical Case Studies Coming Soon</h3>
+        <p>Additional case studies covering Azure modernization, multi-cloud deployments, and SRE practices will be added here.</p>
       </div>
     </div>
   </section>
