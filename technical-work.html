@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Technical Work - Jakub Slon-Jones</title>
+  <style>
+    :root {
+      --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --text-color: #333;
+      --header-bg: rgba(255, 255, 255, 0.95);
+      --section-bg: white;
+      --section-alt-bg: #f8f9fa;
+      --resume-bg: white;
+      --footer-bg: #333;
+      --footer-text: white;
+    }
+
+    body.dark-theme {
+      --bg-gradient: #121212;
+      --text-color: #eee;
+      --header-bg: rgba(34, 34, 34, 0.95);
+      --section-bg: #1e1e1e;
+      --section-alt-bg: #2a2a2a;
+      --resume-bg: #2e2e2e;
+      --footer-bg: #000;
+      --footer-text: #ccc;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background: var(--bg-gradient);
+      min-height: 100vh;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    .header {
+      position: fixed; top: 0; width: 100%;
+      background: var(--header-bg); backdrop-filter: blur(10px);
+      z-index: 1000; padding: 1rem 0;
+      transition: all 0.3s ease;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .nav { display: flex; justify-content: space-between; align-items: center; flex: 1; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #667eea; }
+    .nav-links { display: flex; list-style: none; gap: 2rem; }
+    .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s ease; }
+    .nav-links a:hover { color: #667eea; }
+
+    .theme-toggle {
+      border: none; background: #667eea; color: white; padding: 8px 16px;
+      border-radius: 20px; cursor: pointer; font-weight: bold; transition: all 0.3s ease;
+    }
+    .theme-toggle:hover { background: #764ba2; }
+
+    .back-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      margin-bottom: 2rem;
+    }
+    .back-button:hover {
+      background: #764ba2;
+      transform: translateY(-2px);
+    }
+
+    /* Sections */
+    .section { padding: 80px 0; background: var(--section-bg); transition: background 0.3s ease; }
+    .section:nth-child(even) { background: var(--section-alt-bg); }
+    .section-title {
+      text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: var(--text-color); position: relative;
+    }
+    .section-title::after {
+      content: ''; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%);
+      width: 60px; height: 3px; background: linear-gradient(135deg, #667eea, #764ba2);
+    }
+
+    /* Technical Work Section */
+    .case-study {
+      background: var(--resume-bg);
+      border-radius: 15px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-left: 4px solid #667eea;
+    }
+
+    .case-study-title {
+      color: #667eea;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #f0f0f0;
+      padding-bottom: 0.5rem;
+    }
+
+    .case-study-content {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .case-study-section {
+      background: var(--section-bg);
+      padding: 1.5rem;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+    }
+
+    .case-study-subtitle {
+      color: #667eea;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .case-study-section ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .case-study-section li {
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .tech-tag {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .case-study-placeholder {
+      background: var(--section-alt-bg);
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      padding: 2rem;
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin-top: 2rem;
+    }
+
+    .case-study-placeholder h3 {
+      color: #667eea;
+      margin-bottom: 1rem;
+      font-style: normal;
+    }
+
+    /* Footer */
+    .footer { 
+      background: var(--footer-bg); color: var(--footer-text); text-align: center; padding: 3rem 0; transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      
+      .case-study-content {
+        gap: 1.5rem;
+      }
+      
+      .case-study {
+        padding: 1.5rem;
+      }
+      
+      .tech-tags {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">Jakub Slon-Jones</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#resume">Resume</a></li>
+        <li><a href="index.html#github">GitHub</a></li>
+      </ul>
+      <!-- Theme toggle button -->
+      <button id="theme-toggle" class="theme-toggle">🌙 Dark</button>
+    </div>
+  </header>
+  
+  <!-- Technical Work Section -->
+  <section class="section" style="padding-top: 120px;">
+    <div class="container">
+      <a href="index.html" class="back-button">← Back to Portfolio</a>
+      <h2 class="section-title">Technical Work</h2>
+      
+      <!-- Case Study 1: EKS Scaling -->
+      <div class="case-study">
+        <h3 class="case-study-title">Scaling High-Throughput Workloads on EKS</h3>
+        
+        <div class="case-study-content">
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Problem</h4>
+            <p>A high-frequency trading platform was experiencing unpredictable traffic spikes during market volatility, leading to:</p>
+            <ul>
+              <li>Service degradation during peak trading hours</li>
+              <li>Inconsistent response times affecting trade execution</li>
+              <li>Manual scaling interventions causing operational overhead</li>
+              <li>Resource contention between different workload types</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Approach</h4>
+            <ul>
+              <li><strong>EKS Cluster Management:</strong> Implemented multi-AZ cluster architecture with node groups optimized for different workload types</li>
+              <li><strong>Autoscaling Policies:</strong> Configured HPA and VPA with custom metrics, fine-tuned scaling policies for rapid response to traffic spikes</li>
+              <li><strong>Namespace Isolation:</strong> Split workloads across dedicated namespaces to prevent resource contention and enable independent scaling</li>
+              <li><strong>Istio Service Mesh:</strong> Implemented traffic management, security policies, and observability across microservices</li>
+              <li><strong>GitLab CI/CD:</strong> Built fully automated pipelines with integrated testing, security scanning, and deployment automation</li>
+              <li><strong>Pod Disruption Budgets:</strong> Enhanced PDBs to ensure zero-downtime deployments during rolling updates</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Tools Used</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Kubernetes</span>
+              <span class="tech-tag">EKS</span>
+              <span class="tech-tag">Helm</span>
+              <span class="tech-tag">Istio</span>
+              <span class="tech-tag">GitLab CI/CD</span>
+              <span class="tech-tag">Prometheus</span>
+              <span class="tech-tag">Grafana</span>
+              <span class="tech-tag">Terraform</span>
+            </div>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Outcome</h4>
+            <ul>
+              <li><strong>99.9% uptime</strong> during high-traffic periods (previously 95.2%)</li>
+              <li><strong>30% improvement</strong> in p95 latency during peak loads</li>
+              <li><strong>Zero manual interventions</strong> required for scaling events</li>
+              <li><strong>40% reduction</strong> in infrastructure costs through optimized resource allocation</li>
+              <li>Successfully handled <strong>10x traffic spikes</strong> without service degradation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Case Study 2: Terraform Modules -->
+      <div class="case-study">
+        <h3 class="case-study-title">Terraform Modules for Multi-Squad Adoption</h3>
+        
+        <div class="case-study-content">
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Problem</h4>
+            <p>Four development teams were creating inconsistent Azure infrastructure across environments, leading to:</p>
+            <ul>
+              <li>Duplicated Terraform code and configuration drift between teams</li>
+              <li>Security vulnerabilities from inconsistent NSG configurations and Docker CVEs</li>
+              <li>Deployment failures due to environment-specific hardcoded values</li>
+              <li>Increased maintenance overhead and knowledge silos</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Approach</h4>
+            <ul>
+              <li><strong>Module Architecture:</strong> Designed reusable Terraform modules with clear interfaces and versioning strategy</li>
+              <li><strong>Standardisation:</strong> Created modules for common Azure patterns (VNet, AKS, SQL Database, Application Gateway) with built-in security best practices</li>
+              <li><strong>Documentation:</strong> Built comprehensive module documentation with examples and usage patterns</li>
+              <li><strong>CI/CD Integration:</strong> Implemented automated testing and validation pipelines for module changes</li>
+              <li><strong>Governance:</strong> Established module registry and approval process for production deployments</li>
+              <li><strong>Embedded Onboarding:</strong> Created self-service onboarding process where users add themselves to Azure groups directly from the repository</li>
+            </ul>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Tools Used</h4>
+            <div class="tech-tags">
+              <span class="tech-tag">Terraform</span>
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Azure DevOps</span>
+              <span class="tech-tag">Checkov</span>
+              <span class="tech-tag">Terraform Cloud</span>
+              <span class="tech-tag">Git</span>
+            </div>
+          </div>
+          
+          <div class="case-study-section">
+            <h4 class="case-study-subtitle">Outcome</h4>
+            <ul>
+              <li><strong>80% reduction</strong> in infrastructure provisioning time across teams</li>
+              <li><strong>Significant reduction</strong> in security vulnerabilities through standardized NSG configurations</li>
+              <li><strong>95% code reuse</strong> across different environments and teams</li>
+              <li><strong>Self-service onboarding</strong> reduced manual setup time from days to minutes</li>
+              <li>Successfully migrated <strong>4 development teams</strong> to standardized module approach</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Placeholder for future case studies -->
+      <div class="case-study-placeholder">
+        <h3>More Technical Case Studies Coming Soon</h3>
+        <p>Additional case studies covering Azure modernization, multi-cloud deployments, and SRE practices will be added here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Jakub Slon-Jones. All rights reserved.</p>
+        <div class="linkedin-badge">
+          <a href="https://uk.linkedin.com/in/jakubslon" target="_blank" style="display: inline-block; padding: 12px 24px; background: #0077B5; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s ease;">
+            <svg width="20" height="20" style="vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Connect on LinkedIn
+          </a>
+        </div>
+        <p>Connect with me on LinkedIn to see more of my professional journey.</p>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  const toggleBtn = document.getElementById('theme-toggle');
+  toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-theme');
+    if (document.body.classList.contains('dark-theme')) {
+      toggleBtn.textContent = '☀️ Light';
+    } else {
+      toggleBtn.textContent = '🌙 Dark';
+    }
+  });
+</script>
+</body>
+</html>

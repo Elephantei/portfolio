@@ -341,6 +341,71 @@
       font-style: normal;
     }
 
+    /* Technical Work Button */
+    .technical-work-intro {
+      text-align: center;
+    }
+
+    .technical-work-button-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .technical-work-button {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 2.5rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      text-decoration: none;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .technical-work-button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+      color: white;
+      text-decoration: none;
+    }
+
+    .button-icon {
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .button-text {
+      flex: 1;
+      text-align: left;
+    }
+
+    .button-text strong {
+      display: block;
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .button-text small {
+      display: block;
+      opacity: 0.9;
+      font-size: 0.9rem;
+    }
+
+    .button-arrow {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .technical-work-button:hover .button-arrow {
+      transform: translateX(5px);
+    }
+
     .github-card img {
       width: 100%;
       height: auto;
@@ -392,6 +457,17 @@
       
       .tech-tags {
         justify-content: center;
+      }
+      
+      .technical-work-button {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.8rem;
+        padding: 1.2rem 1.5rem;
+      }
+      
+      .button-text {
+        text-align: center;
       }
     }
 
@@ -464,121 +540,21 @@
   <section id="technical-work" class="section">
     <div class="container">
       <h2 class="section-title">Technical Work</h2>
-      
-      <!-- Case Study 1: EKS Scaling -->
-      <div class="case-study">
-        <h3 class="case-study-title">Scaling High-Throughput Workloads on EKS</h3>
-        
-        <div class="case-study-content">
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Problem</h4>
-            <p>A high-frequency trading platform was experiencing unpredictable traffic spikes during market volatility, leading to:</p>
-            <ul>
-              <li>Service degradation during peak trading hours</li>
-              <li>Inconsistent response times affecting trade execution</li>
-              <li>Manual scaling interventions causing operational overhead</li>
-              <li>Resource contention between different workload types</li>
-            </ul>
-          </div>
-          
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Approach</h4>
-            <ul>
-              <li><strong>EKS Cluster Management:</strong> Implemented multi-AZ cluster architecture with node groups optimized for different workload types</li>
-              <li><strong>Autoscaling Policies:</strong> Configured HPA and VPA with custom metrics, fine-tuned scaling policies for rapid response to traffic spikes</li>
-              <li><strong>Namespace Isolation:</strong> Split workloads across dedicated namespaces to prevent resource contention and enable independent scaling</li>
-              <li><strong>Istio Service Mesh:</strong> Implemented traffic management, security policies, and observability across microservices</li>
-              <li><strong>GitLab CI/CD:</strong> Built fully automated pipelines with integrated testing, security scanning, and deployment automation</li>
-              <li><strong>Pod Disruption Budgets:</strong> Enhanced PDBs to ensure zero-downtime deployments during rolling updates</li>
-            </ul>
-          </div>
-          
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Tools Used</h4>
-            <div class="tech-tags">
-              <span class="tech-tag">Kubernetes</span>
-              <span class="tech-tag">EKS</span>
-              <span class="tech-tag">Helm</span>
-              <span class="tech-tag">Istio</span>
-              <span class="tech-tag">GitLab CI/CD</span>
-              <span class="tech-tag">Prometheus</span>
-              <span class="tech-tag">Grafana</span>
-              <span class="tech-tag">Terraform</span>
-            </div>
-          </div>
-          
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Outcome</h4>
-            <ul>
-              <li><strong>99.9% uptime</strong> during high-traffic periods (previously 95.2%)</li>
-              <li><strong>30% improvement</strong> in p95 latency during peak loads</li>
-              <li><strong>Zero manual interventions</strong> required for scaling events</li>
-              <li><strong>40% reduction</strong> in infrastructure costs through optimized resource allocation</li>
-              <li>Successfully handled <strong>10x traffic spikes</strong> without service degradation</li>
-            </ul>
-          </div>
-
+      <div class="technical-work-intro">
+        <p style="font-size: 1.2rem; text-align: center; margin-bottom: 3rem; color: var(--text-color); opacity: 0.8;">
+          Explore detailed case studies showcasing my technical expertise in scaling high-throughput workloads, 
+          infrastructure automation, and DevOps best practices.
+        </p>
+        <div class="technical-work-button-container">
+          <a href="technical-work.html" class="technical-work-button">
+            <span class="button-icon">🚀</span>
+            <span class="button-text">
+              <strong>View Technical Case Studies</strong>
+              <small>EKS Scaling • Terraform Modules • Infrastructure Automation</small>
+            </span>
+            <span class="button-arrow">→</span>
+          </a>
         </div>
-      </div>
-      
-      <!-- Case Study 2: Terraform Modules -->
-      <div class="case-study">
-        <h3 class="case-study-title">Terraform Modules for Multi-Squad Adoption</h3>
-        
-        <div class="case-study-content">
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Problem</h4>
-            <p>Four development teams were creating inconsistent Azure infrastructure across environments, leading to:</p>
-            <ul>
-              <li>Duplicated Terraform code and configuration drift between teams</li>
-              <li>Security vulnerabilities from inconsistent NSG configurations and Docker CVEs</li>
-              <li>Deployment failures due to environment-specific hardcoded values</li>
-              <li>Increased maintenance overhead and knowledge silos</li>
-            </ul>
-          </div>
-          
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Approach</h4>
-            <ul>
-              <li><strong>Module Architecture:</strong> Designed reusable Terraform modules with clear interfaces and versioning strategy</li>
-              <li><strong>Standardisation:</strong> Created modules for common Azure patterns (VNet, AKS, SQL Database, Application Gateway) with built-in security best practices</li>
-              <li><strong>Documentation:</strong> Built comprehensive module documentation with examples and usage patterns</li>
-              <li><strong>CI/CD Integration:</strong> Implemented automated testing and validation pipelines for module changes</li>
-              <li><strong>Governance:</strong> Established module registry and approval process for production deployments</li>
-              <li><strong>Embedded Onboarding:</strong> Created self-service onboarding process where users add themselves to Azure groups directly from the repository</li>
-            </ul>
-          </div>
-          
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Tools Used</h4>
-            <div class="tech-tags">
-              <span class="tech-tag">Terraform</span>
-              <span class="tech-tag">Azure</span>
-              <span class="tech-tag">Azure DevOps</span>
-              <span class="tech-tag">Checkov</span>
-              <span class="tech-tag">Terraform Cloud</span>
-              <span class="tech-tag">Git</span>
-            </div>
-          </div>
-          
-          <div class="case-study-section">
-            <h4 class="case-study-subtitle">Outcome</h4>
-            <ul>
-              <li><strong>80% reduction</strong> in infrastructure provisioning time across teams</li>
-              <li><strong>Significant reduction</strong> in security vulnerabilities through standardized NSG configurations</li>
-              <li><strong>95% code reuse</strong> across different environments and teams</li>
-              <li><strong>Self-service onboarding</strong> reduced manual setup time from days to minutes</li>
-              <li>Successfully migrated <strong>4 development teams</strong> to standardized module approach</li>
-            </ul>
-          </div>
- 
-        </div>
-      </div>
-      
-      <!-- Placeholder for future case studies -->
-      <div class="case-study-placeholder">
-        <h3>More Technical Case Studies Coming Soon</h3>
-        <p>Additional case studies covering Azure modernization, multi-cloud deployments, and SRE practices will be added here.</p>
       </div>
     </div>
   </section>
@@ -690,7 +666,7 @@
   <footer class="footer">
     <div class="container">
       <div class="footer-content">
-        <p>&copy; 2024 Jakub Slon-Jones. All rights reserved.</p>
+        <p>&copy; 2025 Jakub Slon-Jones. All rights reserved.</p>
         <div class="linkedin-badge">
           <a href="https://uk.linkedin.com/in/jakubslon" target="_blank" style="display: inline-block; padding: 12px 24px; background: #0077B5; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; transition: all 0.3s ease;">
             <svg width="20" height="20" style="vertical-align: middle; margin-right: 8px;" viewBox="0 0 24 24" fill="currentColor">
