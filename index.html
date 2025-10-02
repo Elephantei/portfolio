@@ -500,7 +500,6 @@
         <li><a href="#about">About</a></li>
         <li><a href="#resume">Resume</a></li>
         <li><a href="#technical-work">Technical Work</a></li>
-        <li><a href="#github">GitHub</a></li>
       </ul>
       <!-- Theme toggle button -->
       <button id="theme-toggle" class="theme-toggle">🌙 Dark</button>
@@ -559,97 +558,143 @@
     </div>
   </section>
 
-  <!-- Resume -->
   <section id="resume" class="section">
     <div class="container">
       <h2 class="section-title">Experience</h2>
-
+  
+      <!-- Senior Site Reliability Engineer -->
       <div class="resume-entry">
         <h3>Senior Site Reliability Engineer — RTGS Global</h3>
         <h4>London (Remote) | Nov 2024 – Present</h4>
-        <p>Part of the platform engineering team modernising a high-availability financial services platform, embedding DevOps and SRE practices to improve reliability, speed, and compliance in a regulated environment. Refactored critical Azure microservices into serverless patterns, built reusable Terraform modules for compliant environments, and implemented CI/CD pipelines with integrated security scanning and OpenTelemetry-based observability.</p>
-        <p class="tech-stack">Tech stack: Azure (Container Apps, Functions, AKS), Terraform, Azure DevOps, OpenTelemetry</p>
+        <ul>
+          <li>Modernising a high-availability financial services platform to improve reliability, speed, and regulatory compliance</li>
+          <li>Refactored Azure microservices into serverless patterns, reducing operational overhead and increasing scalability</li>
+          <li>Built reusable Terraform modules to accelerate compliant environment creation and reduce audit effort</li>
+          <li>Implemented CI/CD pipelines with integrated security scanning to reduce release risk and improve delivery speed</li>
+          <li>Introduced OpenTelemetry observability, enabling faster incident resolution and improved service uptime</li>
+        </ul>
+        <p class="tech-stack">
+          <i class="devicon-azure-plain colored"></i> Azure (Container Apps, Functions, AKS) 
+          <i class="devicon-terraform-plain colored"></i> Terraform 
+          <i class="devicon-azuredevops-plain colored"></i> Azure DevOps 
+          OpenTelemetry
+        </p>
       </div>
-
+  
+      <!-- Senior DevOps Engineer -->
       <div class="resume-entry">
         <h3>Senior DevOps Engineer — X-Lab Systems</h3>
         <h4>Leeds (Remote) | Aug 2023 – Nov 2024</h4>
-        <p>Modernised and optimised cloud infrastructure supporting critical healthcare systems on Azure. Created reusable Terraform modules for AKS clusters and security components, delivered gated CI/CD pipelines, and achieved 30% (~£130k annually) cost reduction through governance tooling and workload right-sizing. Introduced Prometheus and Grafana for observability and on-call operations.</p>
-        <p class="tech-stack">Tech stack: Azure (AKS), Terraform, Azure DevOps, GitLab CI, Prometheus, Grafana</p>
+        <ul>
+          <li>Optimised Azure infrastructure supporting critical healthcare systems, ensuring resilience and compliance</li>
+          <li>Delivered reusable Terraform modules for AKS clusters and security, cutting setup time and risk</li>
+          <li>Built gated CI/CD pipelines, reducing failed releases and improving deployment confidence</li>
+          <li>Reduced cloud costs by 30% (~£130k annually) through governance tooling and workload right-sizing</li>
+          <li>Introduced Prometheus and Grafana for observability, improving on-call response and system stability</li>
+        </ul>
+        <p class="tech-stack">
+          <i class="devicon-azure-plain colored"></i> Azure (AKS) 
+          <i class="devicon-terraform-plain colored"></i> Terraform 
+          <i class="devicon-azuredevops-plain colored"></i> Azure DevOps 
+          <i class="devicon-gitlab-plain colored"></i> GitLab CI 
+          <i class="devicon-prometheus-plain colored"></i> Prometheus 
+          <i class="devicon-grafana-plain colored"></i> Grafana
+        </p>
       </div>
-
+  
+      <!-- DevOps Consultant -->
       <div class="resume-entry">
         <h3>DevOps Consultant — Amido (Ensono Digital)</h3>
         <h4>London (Remote) | Jan 2023 – Aug 2023</h4>
-        <p>Consulted across enterprise AWS and Azure projects for highly regulated clients, helping teams modernise cloud infrastructure while maintaining compliance and reliability at scale. Delivered Terraform-based automation pipelines, developed reusable Helm charts for Kubernetes rollouts, orchestrated EKS and AKS clusters, and produced technical documentation to drive consistent engineering standards.</p>
-        <p class="tech-stack">Tech stack: AWS, Azure, Kubernetes (EKS/AKS), Terraform, Helm</p>
+        <ul>
+          <li>Advised regulated enterprises on AWS and Azure modernisation, balancing compliance with agility</li>
+          <li>Delivered Terraform automation pipelines, reducing manual operations and error rates</li>
+          <li>Developed reusable Helm charts, standardising Kubernetes rollouts and cutting deployment times</li>
+          <li>Built and scaled EKS and AKS clusters, improving resilience and developer productivity</li>
+          <li>Authored technical documentation to drive consistent engineering practices across teams</li>
+        </ul>
+        <p class="tech-stack">
+          <i class="devicon-amazonwebservices-plain colored"></i> AWS 
+          <i class="devicon-azure-plain colored"></i> Azure 
+          <i class="devicon-kubernetes-plain colored"></i> Kubernetes (EKS/AKS) 
+          <i class="devicon-terraform-plain colored"></i> Terraform 
+          Helm
+        </p>
       </div>
-
+  
+      <!-- Senior DevOps Engineer -->
       <div class="resume-entry">
         <h3>Senior DevOps Engineer — BVNK</h3>
         <h4>London (Remote) | Aug 2022 – Jan 2023</h4>
-        <p>Part of the engineering team scaling infrastructure for high-throughput crypto services, focusing on resilience, cost efficiency, and developer support. Managed and scaled EKS clusters with Helm deployments, tuned autoscaling policies to reduce costs while improving resilience, introduced Grafana dashboards and on-call processes, and partnered with developers to resolve production performance bottlenecks.</p>
-        <p class="tech-stack">Tech stack: AWS (EKS), Kubernetes, Helm, Grafana</p>
+        <ul>
+          <li>Scaled AWS infrastructure for high-throughput crypto services, improving resilience and cost efficiency</li>
+          <li>Managed and optimised EKS clusters with Helm deployments, improving stability of core services</li>
+          <li>Tuned autoscaling policies to cut infrastructure costs while maintaining performance under load</li>
+          <li>Introduced Grafana dashboards and on-call processes, improving incident visibility and response time</li>
+          <li>Partnered with developers to remove production bottlenecks, enhancing transaction throughput</li>
+        </ul>
+        <p class="tech-stack">
+          <i class="devicon-amazonwebservices-plain colored"></i> AWS (EKS) 
+          <i class="devicon-kubernetes-plain colored"></i> Kubernetes 
+          Helm 
+          <i class="devicon-grafana-plain colored"></i> Grafana
+        </p>
       </div>
-
+  
+      <!-- SRE & DevOps Consultant -->
       <div class="resume-entry">
         <h3>SRE & DevOps Consultant — Amido (Ensono Digital)</h3>
         <h4>London (Remote) | 2021 – 2022</h4>
-        <p>Delivered SRE initiatives and DevOps enablement across AWS, Azure, and GCP. Defined SLIs/SLOs, implemented dashboards and automated alerts, deployed multi-cloud infrastructure with Terraform, and improved on-call response efficiency.</p>
-        <p class="tech-stack">Tech stack: AWS, Azure, GCP, Terraform, Monitoring/Alerting</p>
+        <ul>
+          <li>Defined SLIs/SLOs and automated dashboards to improve reliability tracking across multi-cloud platforms</li>
+          <li>Implemented alerting and monitoring to reduce mean-time-to-recover (MTTR)</li>
+          <li>Delivered multi-cloud infrastructure with Terraform, increasing consistency and compliance</li>
+          <li>Enabled DevOps adoption, reducing delivery lead time across engineering teams</li>
+        </ul>
+        <p class="tech-stack">
+          <i class="devicon-amazonwebservices-plain colored"></i> AWS 
+          <i class="devicon-azure-plain colored"></i> Azure 
+          <i class="devicon-googlecloud-plain colored"></i> GCP 
+          <i class="devicon-terraform-plain colored"></i> Terraform 
+          Monitoring/Alerting
+        </p>
       </div>
-
+  
+      <!-- DevOps Engineer -->
       <div class="resume-entry">
         <h3>DevOps Engineer — ForgeRock</h3>
         <h4>Bristol (Remote) | 2019 – 2021</h4>
-        <p>Enabled CI/CD and cloud infrastructure automation for secure identity platforms. Built and maintained Terraform modules for cloud-native deployments, supported CI/CD pipelines and release automation, and contributed to platform monitoring and incident resolution.</p>
-        <p class="tech-stack">Tech stack: AWS, Terraform, CI/CD tools, Monitoring</p>
+        <ul>
+          <li>Automated CI/CD pipelines for secure identity platforms, reducing release lead time</li>
+          <li>Built Terraform modules for cloud-native deployments, ensuring repeatability and compliance</li>
+          <li>Supported monitoring and incident resolution, improving platform uptime and customer trust</li>
+        </ul>
+        <p class="tech-stack">
+          <i class="devicon-amazonwebservices-plain colored"></i> AWS 
+          <i class="devicon-terraform-plain colored"></i> Terraform 
+          CI/CD tools 
+          Monitoring
+        </p>
       </div>
-
+  
+      <!-- Network Virtualisation Engineer -->
       <div class="resume-entry">
         <h3>Network Virtualisation Engineer — Nokia</h3>
         <h4>Bristol | 2018 – 2019</h4>
-        <p>Worked on network virtualisation projects, supporting infrastructure deployment, configuration, and optimisation for telecom systems.</p>
-        <p class="tech-stack">Tech stack: Networking, Virtualisation</p>
+        <ul>
+          <li>Delivered network virtualisation projects, enabling more efficient telecom infrastructure deployment</li>
+          <li>Optimised system performance and configuration, improving service reliability for clients</li>
+        </ul>
+        <p class="tech-stack">
+          Networking, Virtualisation
+        </p>
       </div>
-
+  
     </div>
   </section>
-
-  <!-- GitHub Section -->
-  <section id="github" class="section github-section">
-    <div class="container">
-      <h2 class="section-title">GitHub Projects</h2>
-      
-      <a href="https://github.com/Elephantei" target="_blank" class="github-banner">
-        <svg viewBox="0 0 24 24">
-          <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
-        </svg>
-        <div class="github-banner-content">
-          <h3>Visit My GitHub Profile</h3>
-          <p>Explore my repositories and contributions</p>
-        </div>
-      </a>
-
-      <div class="github-explanation">
-        <p>Some of my projects were built for internal company accounts and are not under my personal GitHub. The repositories shown here represent a selection of my public work.</p>
-      </div>
-
-      <div class="github-activity">
-        <div class="github-stats">
-          <div class="github-card">
-            <img src="https://github-readme-stats.vercel.app/api?username=Elephantei&show_icons=true&theme=default&hide_border=true" alt="GitHub Stats" />
-          </div>
-          <div class="github-card">
-            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Elephantei&layout=compact&theme=default&hide_border=true" alt="Top Languages" />
-          </div>
-        </div>
-        <div class="github-card" style="max-width: 800px; width: 100%;">
-          <img src="https://github-readme-activity-graph.vercel.app/graph?username=Elephantei&theme=github-compact&hide_border=true" alt="GitHub Activity Graph" />
-        </div>
-      </div>
-    </div>
-  </section>
+  
+  
+  
 
   <!-- Download -->
   <section class="section download-section">
